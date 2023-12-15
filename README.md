@@ -1,4 +1,2 @@
-# BallSortPuzzle
+# Class Ball 
 
-Test
-QUOICOUBEH
