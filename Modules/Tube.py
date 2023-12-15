@@ -1,4 +1,4 @@
-class Pile :
+class Tube:
     def __init__(self, x):
         self.elmts = []
         self.maxi = x
