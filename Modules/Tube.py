@@ -1,3 +1,5 @@
+# Cody
+
 class Tube:
     def __init__(self, x):
         self.elmts = []
@@ -6,7 +8,7 @@ class Tube:
     def est_vide(self):
         return self.elmts == []
 
-    def empiler (self, x):
+    def empiler(self, x):
         if self.est_plein():
             raise IndexError ("La pile est plaine")
         else :
