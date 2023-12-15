@@ -1,6 +1,4 @@
 # Class Ball 
-
-
 TUBES
 pile_vide(): créer une pile vide 
 est_vide(p): teste si la pile p est vide (renvoie un booléen)
