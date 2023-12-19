@@ -1,4 +1,5 @@
 # Class Ball 
+
 TUBES
 pile_vide(): créer une pile vide 
 est_vide(p): teste si la pile p est vide (renvoie un booléen)
@@ -10,8 +11,10 @@ new_maxi(): définit une une nouvelle valeur max de la pile
 
 NIVEAUX
 recuperer_niveau(): recupere le niveaux actuel 
-reinitialisation_niveau(): permet de reinitialisé le niveau 
+reinitialisation(): permet de remettre le niveau à l'état d'origine
 niveau_suivant(): permet d'acceder au prochain niveaux apres une victoire 
+initialisation(): génère un niveaux avec des tubes,boules de couleurs
+recuperer_tube(tube): permet de selectionner le tube (tube)
 
 
 INTERFACE GRAPHIQUE 
