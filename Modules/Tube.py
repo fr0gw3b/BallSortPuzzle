@@ -1,9 +1,9 @@
 # Cody
 
 class Tube:
-    def __init__(self, x):
+    def __init__(self):
         self.elmts = []
-        self.maxi = x
+        self.maxi = 4
 
     def est_vide(self):
         return self.elmts == []
@@ -24,3 +24,6 @@ class Tube:
 
     def new_maxi(self, x):
         self.maxi = x
+
+    def afficher_elements(self):
+        return self.elmts
