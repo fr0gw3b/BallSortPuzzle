@@ -2,6 +2,8 @@
     # Tom
 from Tube import Tube
 from Boule import Boule
+import fenetre
+
 import random
 
 class Niveau:
@@ -9,6 +11,8 @@ class Niveau:
         self.niveau = 0
         self.boules_par_defaut = [];
         self.boules_joueur = [];
+        
+        self.tube_selectionne = None;
 
         # Définition des couleurs des boules obtenables
         self.couleurs_list = [ "Rouge", "Bleu", "Vert", "Jaune", "Turquoise", "Violet", "Orange" ]
@@ -40,20 +44,39 @@ class Niveau:
 
         self.boules_joueur = self.boules_par_defaut
 
-        """for i, tube in enumerate(self.boules_par_defaut):
-            print(f"Tube {i + 1}:")
-            elements_du_tube = tube.afficher_elements()
-            for index, boule in enumerate(elements_du_tube):
-                print(f"   Boule {index + 1}: Couleur = {boule.get_couleur()}")"""
-
     def reinitialisation(self):
-        self.boules_joueur = self.boules_par_defaut
+        nouvelles_boules_joueur = []
+        for tube in self.boules_par_defaut:
+            nouveau_tube = Tube()
+            for boule in tube.elmts:
+                nouvelle_boule = Boule(boule.get_couleur())
+                nouveau_tube.empiler(nouvelle_boule)
+            nouvelles_boules_joueur.append(nouveau_tube)
 
-    def recuperer_niveau(self):
-        return self.niveau
+        self.boules_joueur = nouvelles_boules_joueur
+        self.afficher_niveau()
+    
+    def deplacer_boule(self, tube_source, tube_destination):
+        if tube_source.est_vide():
+            print("Le tube source est vide. Sélectionnez un autre tube.")
+            return
 
-    def recuper_tube(self, tube):
-        pass
+        boule_a_deplacer = tube_source.depiler()
 
-    def niveau_suivant(self):
-        pass
+        if not tube_destination.est_vide():
+            boule_en_haut = tube_destination.recuperer_elements(-1)
+            if boule_a_deplacer.get_couleur() != boule_en_haut.get_couleur():
+                print("Impossible de déplacer la boule. Les couleurs ne correspondent pas.")
+                tube_source.empiler(boule_a_deplacer)
+                return
+
+        if not tube_destination.est_plein():
+            tube_destination.empiler(boule_a_deplacer)
+
+
+    def afficher_niveau(self):
+        for i, tube in enumerate(self.boules_joueur):
+            fenetre.afficher_image(60 + i * 80, 30, "sprites/tube_vide.png")
+
+            for j, boule in enumerate(tube.afficher_elements()):
+                fenetre.afficher_image(60 + i * 80 + 10, 35 + j * 40, "sprites/{}.png".format(boule.get_couleur().lower()))
