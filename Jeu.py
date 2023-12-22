@@ -1,39 +1,49 @@
-# Importe les classes et fonctions nécessaires depuis les modules Niveau et fenetre
+import fenetre
 from Niveau import *
-from fenetre import *
 
-# Crée une instance de la classe Niveau
+fenetre.initialisation(30)
+fenetre.fenetre(580,350)
+fenetre.afficher_image(0, 0, "sprites/fond.png")
+
+# Initialisation du modèle
 niveau = Niveau()
-
-# Initialise le niveau
 niveau.initialisation()
 
-# Appelle une fonction (à remplacer avec la vraie implémentation)
-initialisation(30)
+niveau.afficher_niveau()
 
-# Crée une fenêtre avec une largeur de 580 pixels et une hauteur de 350 pixels
-fenetre(580, 350)
+fenetre.afficher_image(250, 300, "sprites/reset.png")
 
-# Boucle pour chaque tube de boules du joueur dans le niveau
-for i, tube in enumerate(niveau.boules_joueur):
-    """
-    Affiche une image représentant un tube vide à une position spécifique.
-    """
-    afficher_image(60 + i * 80, 30, "sprites_balle/tube_vide.png")
+clic_sur_reset = False
 
-    # Boucle pour chaque boule dans le tube
-    for j, boule in enumerate(tube.afficher_elements()):
-        """
-        Affiche une image représentant une boule de la couleur correspondante
-        à une position spécifique dans le tube.
-        """
-        afficher_image(60 + i * 80 + 10, 35 + j * 40, "sprites_balle/{}.png".format(boule.get_couleur().lower()))
+# Boucle de jeu principale
+# Boucle de jeu principale
+while not fenetre.est_fini():
+    # Mise à jour de l'affichage et des entrées utilisateur
 
-# Appelle une fonction (à remplacer avec la vraie implémentation)
-tick()
+    clic = fenetre.dernier_clic()
+    niveau.afficher_niveau()
 
-"""
-Attend l'appui sur Entrée pour terminer le programme.
-"""
-input("Terminer en appuyant sur Entrée")
+    if clic:
 
+        # Vérifiez si on clique sur le bouton reset
+        if 250 <= clic[0] <= 250 + 250 and 300 <= clic[1] <= 300 + 300:
+            clic_sur_reset = True
+        else:
+            # Vérifiez si le clic est à l'intérieur de la zone des tubes
+            for i, tube in enumerate(niveau.boules_joueur):
+                if 60 + i * 80 <= clic[0] <= 60 + (i + 1) * 80 and 30 <= clic[1] <= 30 + 4 * 40:
+                    if niveau.tube_selectionne is None:
+                        niveau.tube_selectionne = i
+                    else:
+                        niveau.deplacer_boule(niveau.boules_joueur[niveau.tube_selectionne], tube)
+                        niveau.tube_selectionne = None
+
+    fenetre.tick()
+
+    # Réinitialisez le niveau si le bouton reset a été activé
+    if clic_sur_reset:
+        niveau.reinitialisation()
+        clic_sur_reset = False
+
+# Terminaison propre
+fenetre.terminer()
