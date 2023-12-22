@@ -1,5 +1,3 @@
-# Module de niveaux
-    # Tom
 from Tube import Tube
 from Boule import Boule
 import fenetre
