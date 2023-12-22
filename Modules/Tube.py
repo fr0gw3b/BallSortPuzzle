@@ -43,9 +43,6 @@ class Tube:
         """
         return len(self.elmts) == self.maxi
 
-class Tube:
-    # ... (les autres méthodes restent inchangées)
-
     def new_maxi(self, x):
         """
         Modifie la capacité maximale du tube.
