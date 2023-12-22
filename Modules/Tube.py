@@ -59,3 +59,9 @@ class Tube:
         Renvoie la liste des éléments actuellement présents dans le tube.
         """
         return self.elmts
+        
+     def recuperer_elements(self, index):
+        if not self.est_vide():
+            return self.elmts[index]
+        else:
+            return None
