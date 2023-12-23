@@ -29,7 +29,7 @@ TUBES :
 FENETRE :
 
 	-fenetre(largeur, hauteur):Déploie une fenêtre à partir d'une hauteur et d'une largeur.
-    					    Nécessaire pour les fonction afficher_image, dernier_clic, derniere_touche
+    				   Nécessaire pour les fonction afficher_image, dernier_clic, derniere_touche
 
 	-initialisation(fps): Initialise le lancement d'un jeu et fixe le fps max
 
