@@ -1,6 +1,7 @@
 
 TUBES :
-	- pile_vide(): Créer une pile vide
+	
+ 	- pile_vide(): Créer une pile vide
 
 	- est_vide(p): Teste si la pile p est vide (renvoie un booléen)
 
@@ -40,15 +41,15 @@ FENETRE :
     				Retour : None s'il n'y a pas eu de clic ou (x, y) sinon.
     				Remarque : (0, 0) est en bas à gauche, x en abcisse.
 
--derniere_touche(): Renvoie la dernière touche appuyée par l'utilisateur depuis le dernierappel à la fonction tick.
+	-derniere_touche(): Renvoie la dernière touche appuyée par l'utilisateur depuis le dernierappel à la fonction tick.
     				 Retour : None s'il n'y a pas eu de touche d'appuyée, ou un str représentantla touche sinon (une lettre si c'est une touche du clavier, ou "haut","bas", "droite" ou "gauche" si c'est une touche fléchée.
 
--tick(): Permet la synchronisation du jeu au FPS fixé à l'appel de "initialisation" ainsi que de réinitialiser la recherche d'entrée utilisateur (clic ettouche). 
+	-tick(): Permet la synchronisation du jeu au FPS fixé à l'appel de "initialisation" ainsi que de réinitialiser la recherche d'entrée utilisateur (clic ettouche). 
 		 Doit être appelé une fois par frame.
 
--est_fini(): Indique si la fenetre de jeu a été fermée.
+	-est_fini(): Indique si la fenetre de jeu a été fermée.
 
--terminer(): Permet de quitter proprement le module de l'interface graphique.
+	-terminer(): Permet de quitter proprement le module de l'interface graphique.
     		 À appeler avant la fin du programme de préférence.
 
 
@@ -58,13 +59,13 @@ FENETRE :
 
 NIVEAUX :
 
-- deplacer_boule : Permet de faire passer une boule d'un tube à l'autre
+	- deplacer_boule : Permet de faire passer une boule d'un tube à l'autre
 
-- reinitialisation(): Permet de remettre recommencer le niveaux en générant un nouveaux niveaux
+	- reinitialisation(): Permet de remettre recommencer le niveaux en générant un nouveaux niveaux
 
-- initialisation(): Créer plusieurs tubes et insère des boules de couleurs aléatoires dans les tubes, mais laisse 2 tubes vides
+	- initialisation(): Créer plusieurs tubes et insère des boules de couleurs aléatoires dans les tubes, mais laisse 2 tubes vides
 
-- afficher_niveau: Permet d'afficher l'etat actuel du niveaux
+	- afficher_niveau: Permet d'afficher l'etat actuel du niveaux
 
 
 
@@ -80,7 +81,7 @@ JEU :
 
 BOULE :
 
--get_couleur(self): Renvoie la couleur de la boule.
+	-get_couleur(self): Renvoie la couleur de la boule.
 
 
 
@@ -89,14 +90,14 @@ BOULE :
 
 IMPORTS : 
 
--Tube: Importe le module Tube pour pouvoir manipuler piles
+	-Tube: Importe le module Tube pour pouvoir manipuler piles
 
--Boule: Importe le module Boule pour pouvoir manipuler des boules en générant un objet Boule avec une couleur 
+	-Boule: Importe le module Boule pour pouvoir manipuler des boules en générant un objet Boule avec une couleur 
 
--fenetre: Importe le module fenetre pour utiliser l'interface graphique de pygame
+	-fenetre: Importe le module fenetre pour utiliser l'interface graphique de pygame
 
--Niveaux: Importe le module Niveuax pour pouvoir générer un niveaux aléatoire composé de tubes et de boules
+	-Niveaux: Importe le module Niveuax pour pouvoir générer un niveaux aléatoire composé de tubes et de boules
 
--Random: Importe le module random pour pouvoir générer des nombres aléatoire
+	-Random: Importe le module random pour pouvoir générer des nombres aléatoire
 
--pygame: Gestionnaire d'interface graphique minimal.
+	-pygame: Gestionnaire d'interface graphique minimal.
