@@ -23,6 +23,8 @@ TUBES :
 
 
 
+
+
 FENETRE :
 
 -fenetre(largeur, hauteur):Déploie une fenêtre à partir d'une hauteur et d'une largeur.
@@ -52,6 +54,8 @@ FENETRE :
 
 
 
+
+
 NIVEAUX :
 
 - deplacer_boule : Permet de faire passer une boule d'un tube à l'autre
@@ -64,17 +68,27 @@ NIVEAUX :
 
 
 
+
+
 VUE :
+
+
 
 JEU : 
 
-BOULE : 
+
+
+BOULE :
+
 -get_couleur(self): Renvoie la couleur de la boule.
 
 
 
 
+
+
 IMPORTS : 
+
 -Tube: Importe le module Tube pour pouvoir manipuler piles
 
 -Boule: Importe le module Boule pour pouvoir manipuler des boules en générant un objet Boule avec une couleur 
