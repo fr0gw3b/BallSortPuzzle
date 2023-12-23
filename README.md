@@ -1,24 +1,24 @@
 
 TUBES :
-- pile_vide(): Créer une pile vide
+	- pile_vide(): Créer une pile vide
 
-- est_vide(p): Teste si la pile p est vide (renvoie un booléen)
+	- est_vide(p): Teste si la pile p est vide (renvoie un booléen)
 
-- empiler(p,x): Ajoute un élément 'x' au sommet du tube, à condition que le tube ne soit pas plein.
+	- empiler(p,x): Ajoute un élément 'x' au sommet du tube, à condition que le tube ne soit pas plein.
 				Lance une IndexError avec le message "La pile est plaine" si le tube est plein.
 
-- depiler(p):  Retire et renvoie l'élément en haut du tube, à condition que le tube ne soit pas vide.
+	- depiler(p):  Retire et renvoie l'élément en haut du tube, à condition que le tube ne soit pas vide.
 				Lance une IndexError avec le message "La pile est vide" si le tube est vide.
 
-- est_plein(): Teste si la pile p est pleine (renvoie un booléen)
+	- est_plein(): Teste si la pile p est pleine (renvoie un booléen)
 
-- new_maxi(x): Cette méthode permet de changer la capacité maximale du tube.
+	- new_maxi(x): Cette méthode permet de changer la capacité maximale du tube.
 				Paramètres :
         	   		- x : Nouvelle capacité maximale à définir pour le tube.
 
--afficher_elements(): Renvoie la liste des éléments actuellement présents dans le tube.
+	-afficher_elements(): Renvoie la liste des éléments actuellement présents dans le tube.
 
--recuperer_elements(index): Permet de selectionner un element en particulier et l'affiche
+	-recuperer_elements(index): Permet de selectionner un element en particulier et l'affiche
 
 
 
@@ -27,16 +27,16 @@ TUBES :
 
 FENETRE :
 
--fenetre(largeur, hauteur):Déploie une fenêtre à partir d'une hauteur et d'une largeur.
+	-fenetre(largeur, hauteur):Déploie une fenêtre à partir d'une hauteur et d'une largeur.
     					    Nécessaire pour les fonction afficher_image, dernier_clic, derniere_touche
 
--initialisation(fps): Initialise le lancement d'un jeu et fixe le fps max
+	-initialisation(fps): Initialise le lancement d'un jeu et fixe le fps max
 
--afficher_image(x, y, nom_fichier): Affiche une image aux coordonnées (x, y) de la fenetre ouverte à l'appel de la fonction fenetre
+	-afficher_image(x, y, nom_fichier): Affiche une image aux coordonnées (x, y) de la fenetre ouverte à l'appel de la fonction fenetre
 
--refresh_control(): Fonction interne au module. Ne pas utiliser.
+	-refresh_control(): Fonction interne au module. Ne pas utiliser.
 
--dernier_clic(): Récupère les coordonnées du dernier clic de l'utilisateur depuis le dernier appel à la fonction tick.
+	-dernier_clic(): Récupère les coordonnées du dernier clic de l'utilisateur depuis le dernier appel à la fonction tick.
     				Retour : None s'il n'y a pas eu de clic ou (x, y) sinon.
     				Remarque : (0, 0) est en bas à gauche, x en abcisse.
 
