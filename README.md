@@ -24,6 +24,7 @@ TUBES :
 
 
 FENETRE :
+
 -fenetre(largeur, hauteur):Déploie une fenêtre à partir d'une hauteur et d'une largeur.
     					    Nécessaire pour les fonction afficher_image, dernier_clic, derniere_touche
 
@@ -52,6 +53,7 @@ FENETRE :
 
 
 NIVEAUX :
+
 - deplacer_boule : Permet de faire passer une boule d'un tube à l'autre
 
 - reinitialisation(): Permet de remettre recommencer le niveaux en générant un nouveaux niveaux
