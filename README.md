@@ -1,4 +1,4 @@
-INTERFACE:
+
 TUBES :
 - pile_vide(): Créer une pile vide
 
